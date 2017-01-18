@@ -52,7 +52,7 @@ public func solution(_ A : inout [Int]) -> Int {
     var leftSideSum = 0
     
     let arraySum = A.reduce(0, +)
-    var lowestDiff = 1000
+    var lowestDiff = 2000
     
     for index in 1...A.count - 1 {
         leftSideSum += A[index - 1]
