@@ -50,16 +50,15 @@ import UIKit
 
 public func solution(_ A : inout [Int]) -> Int {
     var leftSideSum = 0
-    var lowestDiff = 0
+    
     let arraySum = A.reduce(0, +)
+    var lowestDiff = arraySum
     
     for index in 1...A.count - 1 {
         leftSideSum += A[index - 1]
         let diff = abs(leftSideSum - (arraySum - leftSideSum))
         
-        if index == 1 {
-            lowestDiff = diff
-        } else if diff < lowestDiff {
+        if diff < lowestDiff {
             lowestDiff = diff
         }
     }
